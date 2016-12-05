@@ -6,6 +6,7 @@ import { OnInit } from '@angular/core';
 import { ProductModel } from "./Models/Product.Model"
 
 import { ProductService } from "./Services/Product.Service"
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class ProductsComponent implements OnInit {
     };
 
 
-    listProducts: ProductModel[];
+    // listProducts: Promise<ProductModel[]>;
+    listProducts: Observable<Array<ProductModel>>;
 
 
     //ng-On
@@ -38,7 +40,7 @@ export class ProductsComponent implements OnInit {
 
     //function 
     SetProductsToList(): void {
-        this.listProducts = this.ProductService.GetAllProducts();
+        this.listProducts = this.ProductService.GetAllProductsNormal();
 
     }
 
