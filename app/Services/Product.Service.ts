@@ -32,9 +32,9 @@ export class ProductService {
 
 
 
-    GetAllProductsNormal(): Observable<Array<ProductModel>> {
+    GetAllProductsNormal(){
         return this.http.get("http://localhost:21481/api/sanphams")
-            .map(response => response.json())
+            .map(response => <ProductModel[]>response.json());
         // return ProductsMock;
     }
 

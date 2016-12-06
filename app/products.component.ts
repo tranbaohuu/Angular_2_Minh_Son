@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit {
 
 
     // listProducts: Promise<ProductModel[]>;
-    listProducts: Observable<Array<ProductModel>>;
+    listProducts: ProductModel[];
 
 
     //ng-On
@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit {
 
     //function 
     SetProductsToList(): void {
-        this.listProducts = this.ProductService.GetAllProductsNormal();
+       this.ProductService.GetAllProductsNormal().subscribe(products=>this.listProducts = products);
 
     }
 
