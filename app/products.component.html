@@ -1,4 +1,4 @@
-<table class="table">
+<!--<table class="table">
   <thead>
     <tr>
       <th>ID</th>
@@ -15,3 +15,285 @@
     </tr>
   </tbody>
 </table>
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm - My ASP.NET Application</title>
+  <link rel="Shortcut Icon" href="../../IMAGES/logo.png" type="image/x-icon" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,vietnamese' rel='stylesheet' type='text/css' />
+  <link href="/Content/jquery-ui.css" rel="stylesheet" />
+  <!--<link href="/Content/bootstrap.css" rel="stylesheet" />-->
+  <link href="/Content/flexslider.css" rel="stylesheet" />
+  <link href="/Content/font-awesome.css" rel="stylesheet" />
+  <link href="/Content/PagedList.css" rel="stylesheet" />
+  <link href="/Content/bootstrap-select.min.css" rel="stylesheet" />
+  <link href="/Content/Site.css" rel="stylesheet" />
+  <!--<script src="/Scripts/modernizr-2.8.3.js"></script>-->
+  <link href="https://a360.autodesk.com/viewer/widget/css/widget.css" rel="stylesheet" type="text/css">
+  <!-- RS5.0 Main Stylesheet -->
+  <link href="/Content/revolution/settings.css" rel="stylesheet" />
+  <!-- RS5.0 Layers and Navigation Styles -->
+  <link href="/Content/revolution/layers.css" rel="stylesheet" />
+  <link href="/Content/revolution/navigation.css" rel="stylesheet" />
+  <!--<script src="/Scripts/jquery-2.2.4.js"></script>
+  <script src="/Scripts/jquery-3.1.0.js"></script>-->
+  <!--<script src="/Scripts/bootstrap.js"></script>-->
+  <script src="/Scripts/respond.js"></script>
+  <script src="/Scripts/jquery-ui.js"></script>
+  <script src="/Scripts/jquery.validate.js"></script>
+  <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+  <script src="/Scripts/jquery.flexslider.js"></script>
+  <script src="/Scripts/unslider.js"></script>
+  <script src="/Scripts/less.min.js"></script>
+  <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+  <script src="/Scripts/bootstrap-select.min.js"></script>
+  <script src="/Scripts/parallax.min.js"></script>
+  <script src="https://a360.autodesk.com/viewer/widget/scripts/widget.js" type="text/javascript"></script>
+  <script src="/Scripts/revolution/jquery.themepunch.tools.min.js"></script>
+  <script src="/Scripts/revolution/jquery.themepunch.revolution.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top normal" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+        <a class="navbar-brand" href="/">
+          <img title="Cơ khí Minh Sơn" alt="Minh Sơn" src="/IMAGES/logo.png">
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="/"><i class="fa fa-home fa-lg"></i>&nbsp;Trang chủ</a></li>
+          <li class="active"><a href="/NguoiDung/SanPham"><i class="fa fa-gears fa-lg"></i>&nbsp;Sản phẩm</a></li>
+          <li class=""><a href="/NguoiDung/VeChungToi"><i class="fa fa-users fa-lg"></i>&nbsp;Về chúng tôi</a></li>
+          <li class=""><a href="/"><i class="fa fa-user-plus fa-lg"></i>&nbsp;Tuyển dụng</a></li>
+        </ul>
+        <form action="/NguoiDung/SanPham" data-ajax="true" data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#zoneUpdateAjax"
+          id="form0" method="post">
+          <div class="navbar-form navbar-right normal" id="formSearch" role="search">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="tbTimKiem" style="z-index: 999; display: inline;" name="tensp" placeholder="Tên máy">
+                  <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">
+                                               Tìm
+                                                </button>
+                                            </span>
+                </div>
+                <!-- /input-group -->
+              </div>
+              <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container body-content">
+    <div class="page-header header-mathang">
+      <h1>
+        Sản phẩm
+      </h1>
+    </div>
+    <div class="form-group">
+      <label>Loại sản phẩm: </label> &nbsp;
+      <select class="selectpicker" id="dropListLoaiSP" name="Loai"><option selected="selected" value="0">Tất cả</option>
+<option value="1">Mẫu khu&#244;n</option>
+<option value="2">Mẫu m&#225;y</option>
+</select>
+    </div>
+    <div id="zoneUpdateAjax">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let product of listProducts">
+          <div class="thumbnail">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-center" style="font-size: large;">
+                  <a href="#">{{product.TEN}}</a>
+                </p>
+              </div>
+              <div class="col-md-12 margin-bottom-10px">
+                <img class="img-round center-block product-image" data-original="#" alt="Không có hình" src="/IMAGES/{{product.IMG_URL}}"
+                  style="display: block; border-radius: 0;">
+              </div>
+              <div class="col-md-12 margin-bottom-10px">
+                <div class="col-md-4">
+                  <i class="fa fa-arrows-h" aria-hidden="true"></i><span class="padding-left-8px">300mm</span>
+                </div>
+                <div class="col-md-4">
+                  <i class="fa fa-arrows-v" aria-hidden="true"></i><span class="padding-left-8px">200mm</span>
+                </div>
+                <div class="col-md-4">
+                  <i class="fa fa-balance-scale" aria-hidden="true"></i><span class="padding-left-8px">2kg</span>
+                </div>
+              </div>
+              <hr />
+              <div class="col-md-12 margin-bottom-10px">
+                <div class="col-md-4">
+                  <i class="fa fa-calendar" aria-hidden="true"></i><span class="padding-left-8px">{{product.NGAYNHAP | date:"dd-MM-yy"}}</span>
+                </div>
+                <div class="col-md-4">
+                  <i class="fa fa-diamond"></i><span class="padding-left-8px">Inox</span>
+                </div>
+                <div class="col-md-4">
+                  <i class="fa fa-money"></i><span class="padding-left-8px">5.000.000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4" style="margin-top: -21px; border: 1px; border-style: groove; left: 15px;">
+              <ul class="list-inline" style="font-size: 24px;margin-top: 5px;height: 29px;">
+                <li>
+                  <a href="http://www.facebook.com/sharer.php?u=http://ckminhson.com/NguoiDung/SanPham/1" target="_blank"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li><a href="mailto:minhson1company@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fa fa-link"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <a href="/NguoiDung/Detail_SanPham/1" id="1" class="btn btn-primary btn-lg btn-block radius-button-detail" style="margin-top: -21px">Xem</a>
+            </div>
+          </div>
+          <br />
+          <br />
+        </div>
+
+      </div>
+      <div class="pagedList">
+        <div class="pagination-container">
+          <ul class="pagination">
+            <li class="active"><a>1</a></li>
+            <li><a href="/NguoiDung/SanPham/2">2</a></li>
+            <li class="PagedList-skipToNext"><a href="/NguoiDung/SanPham/2" rel="next">Sau</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer" style="background-color: #333333; width: 100%; height: 100%; color: white; bottom: 0; left: 0;">
+    <div class="container">
+      <br />
+      <p class="text-muted" style="color: white;">Công ty TNHH-MTV Cơ khí chế tạo Minh Sơn - MST: 3602477324 - Địa chỉ: 20A/4 phường Tam Hòa, Biên Hòa, Đồng Nai</p>
+      <p class="text-muted" style="color: white;">&copy; 2016 -Thiết kế và phát triển Trần Bảo Hữu</p>
+    </div>
+  </footer>
+  <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+
+
+
+            //Sự kiện droplist LoaiSP change
+
+            $("#dropListLoaiSP").change(function () {
+
+                var valueLoai = ($("#dropListLoaiSP option:selected").val());
+
+                //window.location.href = "/NguoiDung/SanPham?page=1&loai=" + valueLoai;
+                window.location.href = "/NguoiDung/SanPham/1/" + valueLoai;
+
+
+            });
+
+
+            //Live-Search cho droplist
+            $("#dropListLoaiSP").attr("data-live-search", true);
+
+
+
+            //dropdown list live-search
+
+            $('.selectpicker').selectpicker();
+
+
+            //set trắng textbox tìm kiếm
+
+            $("#tbTimKiem").focus(function () {
+
+                $("#tbTimKiem").val("");
+
+            });
+
+
+            //autocomplete tbTimKiem
+
+            $("#tbTimKiem").autocomplete({
+                source: '/NguoiDung/AutoCompleteSanPham'
+
+            });
+
+
+            //của slideshow
+            $('.flexslider').flexslider({
+                animation: "slide",
+                slideshow: true,
+                thumbCaptions: true
+            });
+
+            var unslider = $('.banner').unslider();
+
+            $('.unslider-arrow').click(function () {
+                var fn = this.className.split(' ')[1];
+
+                //  Either do unslider.data('unslider').next() or .prev() depending on the className
+                unslider.data('unslider')[fn]();
+            });
+
+
+            //Magnify ảnh
+            //$('img').magnify(
+            //{
+            //    speed: 200
+            //});
+
+
+            //Menu tự co vào khi scroll
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('nav').addClass('shrink');
+                    $('#formSearch').addClass('shrink');
+                } else {
+                    $('nav').removeClass('shrink');
+                    $('#formSearch').removeClass('shrink');
+                }
+            });
+
+        });
+
+
+        //Code tô màu vị trí trang đang đứng trên thanh menu bar
+        //$(".navbar-collapse li").click(function () {
+
+
+        //    $(this).addClass("active");
+
+
+        //});
+
+
+    </script>
+  <!-- Visual Studio Browser Link -->
+  <script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"41c1c5fc4ee74414aa5649d57f989238"}
+</script>
+  <script type="text/javascript" src="http://localhost:9129/bb092b2bc334469380208fc9280e7cb4/browserLink" async="async"></script>
+  <!-- End Browser Link -->
+</body>
+
+</html>
