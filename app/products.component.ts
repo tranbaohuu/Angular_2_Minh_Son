@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 
 
-import { OnInit } from '@angular/core';
 
-import { ProductModel } from "./Models/Product.Model"
+import { ProductModel } from "./Models/Product.Model";
 
-import { ProductService } from "./Services/Product.Service"
+import { ProductService } from "./Services/Product.Service";
 import { Observable } from 'rxjs/Observable';
+
+
 
 
 @Component({

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 
 
 import { ProductsComponent } from './products.component';
@@ -6,9 +6,14 @@ import { ProductsComponent } from './products.component';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>Hello Angular</h1>
-    <list-products></list-products>
-    `
+    // template:`<list-products></list-products>`
+    templateUrl: "app/app.component.html",
+    // ViewEncapsulation.None làm cho css thằng cha hiểu ở các thằng con bên dưới, kế thừa sử dụng lại css, script
+    encapsulation: ViewEncapsulation.None
+
+
+
+    // <list-products></list-products>
 
 
 
