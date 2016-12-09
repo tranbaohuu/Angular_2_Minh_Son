@@ -1,210 +1,47 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sản phẩm - My ASP.NET Application</title>
-  <link rel="Shortcut Icon" href="../IMAGES/logo.png" type="image/x-icon" />
-  <link href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,vietnamese' rel='stylesheet' type='text/css' />
-  <link href="../Content/jquery-ui.css" rel="stylesheet" />
-  <!--<link href="/Content/bootstrap.css" rel="stylesheet" />-->
-  <link href="../Content/flexslider.css" rel="stylesheet" />
-  <link href="../Content/font-awesome.css" rel="stylesheet" />
-  <link href="../Content/PagedList.css" rel="stylesheet" />
-  <link href="../Content/bootstrap-select.min.css" rel="stylesheet" />
-  <link href="../Content/Site.css" rel="stylesheet" />
-  <!--<script src="../Scripts/modernizr-2.8.3.js"></script>-->
-  <link href="https://a360.autodesk.com/viewer/widget/css/widget.css" rel="stylesheet" type="text/css">
-  <!-- RS5.0 Main Stylesheet -->
-  <link href="../Content/revolution/settings.css" rel="stylesheet" />
-  <!-- RS5.0 Layers and Navigation Styles -->
-  <link href="../Content/revolution/layers.css" rel="stylesheet" />
-  <link href="../Content/revolution/navigation.css" rel="stylesheet" />
-  <!--<script src="../Scripts/jquery-2.2.4.js"></script>
-  <script src="../Scripts/jquery-3.1.0.js"></script>-->
-  <!--<script src="../Scripts/bootstrap.js"></script>-->
-  <script src="../Scripts/respond.js"></script>
-  <script src="../Scripts/jquery-ui.js"></script>
-  <script src="../Scripts/jquery.validate.js"></script>
-  <script src="../Scripts/jquery.validate.unobtrusive.js"></script>
-  <script src="../Scripts/jquery.flexslider.js"></script>
-  <script src="../Scripts/unslider.js"></script>
-  <script src="../Scripts/less.min.js"></script>
-  <script src="../Scripts/jquery.unobtrusive-ajax.min.js"></script>
-  <script src="../Scripts/bootstrap-select.min.js"></script>
-  <script src="../Scripts/parallax.min.js"></script>
-  <script src="https://a360.autodesk.com/viewer/widget../Scripts/widget.js" type="text/javascript"></script>
-  <script src="../Scripts/revolution/jquery.themepunch.tools.min.js"></script>
-  <script src="../Scripts/revolution/jquery.themepunch.revolution.min.js"></script>
-</head>
-
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top normal" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<nav class="navbar navbar-default navbar-fixed-top normal" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
 
                 </button>
-        <a class="navbar-brand" href="/">
-          <img title="Cơ khí Minh Sơn" alt="Minh Sơn" src="../IMAGES/logo.png">
-        </a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class=""><a  routerLink="/" routerLinkActive="active"><i class="fa fa-home fa-lg"></i>&nbsp;Trang chủ</a></li>
-          <li class="active"><a routerLink="/products" routerLinkActive="active"><i class="fa fa-gears fa-lg"></i>&nbsp;Sản phẩm</a></li>
-          <!--<li class=""><a href="/NguoiDung/VeChungToi"><i class="fa fa-users fa-lg"></i>&nbsp;Về chúng tôi</a></li>
+      <a class="navbar-brand" href="/">
+        <img title="Cơ khí Minh Sơn" alt="Minh Sơn" src="../IMAGES/logo.png">
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class=""><a routerLink="/" routerLinkActive="active"><i class="fa fa-home fa-lg"></i>&nbsp;Trang chủ</a></li>
+        <li class="active"><a routerLink="/products" routerLinkActive="active"><i class="fa fa-gears fa-lg"></i>&nbsp;Sản phẩm</a></li>
+        <!--<li class=""><a href="/NguoiDung/VeChungToi"><i class="fa fa-users fa-lg"></i>&nbsp;Về chúng tôi</a></li>
           <li class=""><a href="/"><i class="fa fa-user-plus fa-lg"></i>&nbsp;Tuyển dụng</a></li>-->
-        </ul>
-        <form action="/NguoiDung/SanPham" data-ajax="true" data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#zoneUpdateAjax"
-          id="form0" method="post">
-          <div class="navbar-form navbar-right normal" id="formSearch" role="search">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="tbTimKiem" style="z-index: 999; display: inline;" name="tensp" placeholder="Tên máy">
-                  <span class="input-group-btn">
+      </ul>
+      <form action="/NguoiDung/SanPham" data-ajax="true" data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#zoneUpdateAjax"
+        id="form0" method="post">
+        <div class="navbar-form navbar-right normal" id="formSearch" role="search">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="input-group">
+                <input type="text" class="form-control" id="tbTimKiem" style="z-index: 999; display: inline;" name="tensp" placeholder="Tên máy">
+                <span class="input-group-btn">
                                                 <button class="btn btn-default" type="button">
                                                Tìm
                                                 </button>
                                             </span>
-                </div>
-                <!-- /input-group -->
               </div>
-              <!-- /.col-lg-6 -->
+              <!-- /input-group -->
             </div>
-            <!-- /.row -->
+            <!-- /.col-lg-6 -->
           </div>
-        </form>
-      </div>
+          <!-- /.row -->
+        </div>
+      </form>
     </div>
-  </nav>
-  <!-- HEADER -->
-  <!--<a routerLink="/" routerLinkActive="active">Home</a>
+  </div>
+</nav>
+<!-- HEADER -->
+<!--<a routerLink="/" routerLinkActive="active">Home</a>
   <a routerLink="/products" routerLinkActive="active">Sản phẩm</a>-->
-
-
-
-  
-  <router-outlet></router-outlet>
-
-
-
-  <!-- FOOTER -->
-  <footer class="footer" style="background-color: #333333; width: 100%; height: 100%; color: white; bottom: 0; left: 0;">
-    <div class="container">
-      <br />
-      <p class="text-muted" style="color: white;">Công ty TNHH-MTV Cơ khí chế tạo Minh Sơn - MST: 3602477324 - Địa chỉ: 20A/4 phường Tam Hòa, Biên Hòa, Đồng Nai</p>
-      <p class="text-muted" style="color: white;">&copy; 2016 -Thiết kế và phát triển Trần Bảo Hữu</p>
-    </div>
-  </footer>
-  <script type="text/javascript">
-        $(document).ready(function () {
-
-
-
-
-
-
-            //Sự kiện droplist LoaiSP change
-
-            $("#dropListLoaiSP").change(function () {
-
-                var valueLoai = ($("#dropListLoaiSP option:selected").val());
-
-                //window.location.href = "/NguoiDung/SanPham?page=1&loai=" + valueLoai;
-                window.location.href = "/NguoiDung/SanPham/1/" + valueLoai;
-
-
-            });
-
-
-            //Live-Search cho droplist
-            $("#dropListLoaiSP").attr("data-live-search", true);
-
-
-
-            //dropdown list live-search
-
-            $('.selectpicker').selectpicker();
-
-
-            //set trắng textbox tìm kiếm
-
-            $("#tbTimKiem").focus(function () {
-
-                $("#tbTimKiem").val("");
-
-            });
-
-
-            //autocomplete tbTimKiem
-
-            $("#tbTimKiem").autocomplete({
-                source: '/NguoiDung/AutoCompleteSanPham'
-
-            });
-
-
-            //của slideshow
-            $('.flexslider').flexslider({
-                animation: "slide",
-                slideshow: true,
-                thumbCaptions: true
-            });
-
-            var unslider = $('.banner').unslider();
-
-            $('.unslider-arrow').click(function () {
-                var fn = this.className.split(' ')[1];
-
-                //  Either do unslider.data('unslider').next() or .prev() depending on the className
-                unslider.data('unslider')[fn]();
-            });
-
-
-            //Magnify ảnh
-            //$('img').magnify(
-            //{
-            //    speed: 200
-            //});
-
-
-            //Menu tự co vào khi scroll
-            $(window).scroll(function () {
-                if ($(document).scrollTop() > 50) {
-                    $('nav').addClass('shrink');
-                    $('#formSearch').addClass('shrink');
-                } else {
-                    $('nav').removeClass('shrink');
-                    $('#formSearch').removeClass('shrink');
-                }
-            });
-
-        });
-
-
-        //Code tô màu vị trí trang đang đứng trên thanh menu bar
-        //$(".navbar-collapse li").click(function () {
-
-
-        //    $(this).addClass("active");
-
-
-        //});
-
-
-    </script>
-  <!-- Visual Studio Browser Link -->
-  <script type="application/json" id="__browserLink_initializationData">
-    {"appName":"Chrome","requestId":"41c1c5fc4ee74414aa5649d57f989238"}
-</script>
-  <script type="text/javascript" src="http://localhost:9129/bb092b2bc334469380208fc9280e7cb4/browserLink" async="async"></script>
-  <!-- End Browser Link -->
-</body>
-
-</html>
+<router-outlet></router-outlet>

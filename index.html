@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
+      <script src="../Scripts/jquery-3.1.1.min.js"></script>-->
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -19,10 +19,155 @@
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
-  </head>
+  <link rel="Shortcut Icon" href="../IMAGES/logo.png" type="image/x-icon" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,vietnamese' rel='stylesheet' type='text/css' />
+  <link href="../Content/jquery-ui.css" rel="stylesheet" />
+  <!--<link href="/Content/bootstrap.css" rel="stylesheet" />-->
+  <link href="../Content/flexslider.css" rel="stylesheet" />
+  <link href="../Content/font-awesome.css" rel="stylesheet" />
+  <link href="../Content/PagedList.css" rel="stylesheet" />
+  <link href="../Content/bootstrap-select.min.css" rel="stylesheet" />
+  <link href="../Content/Site.css" rel="stylesheet" />
+  <!--<script src="../Scripts/modernizr-2.8.3.js"></script>-->
+  <link href="https://a360.autodesk.com/viewer/widget/css/widget.css" rel="stylesheet" type="text/css">
+  <!-- RS5.0 Main Stylesheet -->
+  <link href="../Content/revolution/settings.css" rel="stylesheet" />
+  <!-- RS5.0 Layers and Navigation Styles -->
+  <link href="../Content/revolution/layers.css" rel="stylesheet" />
+  <link href="../Content/revolution/navigation.css" rel="stylesheet" />
+  <!--<script src="../Scripts/jquery-2.2.4.js"></script>
+  <script src="../Scripts/jquery-3.1.0.js"></script>-->
+  <!--<script src="../Scripts/bootstrap.js"></script>-->
+  <script src="../Scripts/respond.js"></script>
+  <script src="../Scripts/jquery-ui.js"></script>
+  <script src="../Scripts/jquery.validate.js"></script>
+  <script src="../Scripts/jquery.validate.unobtrusive.js"></script>
+  <script src="../Scripts/jquery.flexslider.js"></script>
+  <script src="../Scripts/unslider.js"></script>
+  <script src="../Scripts/less.min.js"></script>
+  <script src="../Scripts/jquery.unobtrusive-ajax.min.js"></script>
+  <script src="../Scripts/bootstrap-select.min.js"></script>
+  <script src="../Scripts/parallax.min.js"></script>
+  <!--<script src="https://a360.autodesk.com/viewer/widget../Scripts/widget.js" type="text/javascript"></script>-->
+  <script src="../Scripts/revolution/jquery.themepunch.tools.min.js"></script>
+  <script src="../Scripts/revolution/jquery.themepunch.revolution.min.js"></script>
+</head>
 
-  <body>
+<body>
      <base href="/">
     <my-app>Loading...</my-app>
-  </body>
+  <!-- FOOTER -->
+  <footer class="footer" style="background-color: #333333; width: 100%; height: 100%; color: white; bottom: 0; left: 0;">
+    <div class="container">
+      <br />
+      <p class="text-muted" style="color: white;">Công ty TNHH-MTV Cơ khí chế tạo Minh Sơn - MST: 3602477324 - Địa chỉ: 20A/4 phường Tam Hòa, Biên Hòa, Đồng Nai</p>
+      <p class="text-muted" style="color: white;">&copy; 2016 -Thiết kế và phát triển Trần Bảo Hữu</p>
+    </div>
+  </footer>
+  <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+
+
+
+            //Sự kiện droplist LoaiSP change
+
+            $("#dropListLoaiSP").change(function () {
+
+                var valueLoai = ($("#dropListLoaiSP option:selected").val());
+
+                //window.location.href = "/NguoiDung/SanPham?page=1&loai=" + valueLoai;
+                window.location.href = "/NguoiDung/SanPham/1/" + valueLoai;
+
+
+            });
+
+
+            //Live-Search cho droplist
+            $("#dropListLoaiSP").attr("data-live-search", true);
+
+
+
+            //dropdown list live-search
+
+            $('.selectpicker').selectpicker();
+
+
+            //set trắng textbox tìm kiếm
+
+            $("#tbTimKiem").focus(function () {
+
+                $("#tbTimKiem").val("");
+
+            });
+
+
+            //autocomplete tbTimKiem
+
+            $("#tbTimKiem").autocomplete({
+                source: '/NguoiDung/AutoCompleteSanPham'
+
+            });
+
+
+            //của slideshow
+            $('.flexslider').flexslider({
+                animation: "slide",
+                slideshow: true,
+                thumbCaptions: true
+            });
+
+            var unslider = $('.banner').unslider();
+
+            $('.unslider-arrow').click(function () {
+                var fn = this.className.split(' ')[1];
+
+                //  Either do unslider.data('unslider').next() or .prev() depending on the className
+                unslider.data('unslider')[fn]();
+            });
+
+
+            //Magnify ảnh
+            //$('img').magnify(
+            //{
+            //    speed: 200
+            //});
+
+
+            //Menu tự co vào khi scroll
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $('nav').addClass('shrink');
+                    $('#formSearch').addClass('shrink');
+                } else {
+                    $('nav').removeClass('shrink');
+                    $('#formSearch').removeClass('shrink');
+                }
+            });
+
+        });
+
+
+        //Code tô màu vị trí trang đang đứng trên thanh menu bar
+        //$(".navbar-collapse li").click(function () {
+
+
+        //    $(this).addClass("active");
+
+
+        //});
+
+
+    </script>
+  <!-- Visual Studio Browser Link -->
+  <!--<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"41c1c5fc4ee74414aa5649d57f989238"}
+</script>
+  <script type="text/javascript" src="http://localhost:9129/bb092b2bc334469380208fc9280e7cb4/browserLink" async="async"></script>-->
+  <!-- End Browser Link -->
+</body>
+
 </html>
+
