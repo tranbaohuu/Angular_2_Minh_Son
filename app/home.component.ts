@@ -7,6 +7,9 @@ import { ProductModel } from "./Models/Product.Model";
 import { ProductService } from "./Services/Product.Service";
 
 
+// import { ScriptComponent }from "./script.module";
+
+
 
 
 @Component({
